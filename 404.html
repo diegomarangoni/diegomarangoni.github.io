@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="/style.css" />
+  <script>
+    function toggleColorSchema() {
+      localStorage.colorScheme = localStorage.colorScheme === 'dark' ? null : 'dark';
+      if (localStorage.colorScheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    function setViewHeight() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setViewHeight();
+    window.addEventListener('resize', () => setViewHeight());
+    if (localStorage.colorScheme === 'dark' || (!('colorScheme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      localStorage.colorScheme = 'dark';
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+
+<body
+  class="bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 flex flex-col h-screen p-7 sm:p-16 2xl:p-20">
+  <header class="flex-0 space-y-10 sm:space-y-16 2xl:space-y-20">
+    <button class="flex" onclick="toggleColorSchema()">
+      <svg class="fill-neutral-600 dark:fill-neutral-100" width="36" height="47" viewBox="0 0 36 47"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M10.18 17.4796L10.3339 17.377L4.73453 11.7777L4.63192 11.9316C4.19951 12.5838 3.96498 13.3461 3.96498 14.1449C3.96498 15.2149 4.38274 16.219 5.13762 16.9739C5.89251 17.7288 6.89658 18.1465 7.96661 18.1465C8.75814 18.1392 9.52036 17.912 10.18 17.4796ZM18.1612 20.7557C19.1067 19.8102 19.627 18.557 19.6197 17.2158C19.6197 15.8819 19.0993 14.6286 18.1612 13.6979L8.41368 3.95029C7.47557 3.00486 6.22231 2.4845 4.88844 2.4845C3.55456 2.4845 2.3013 3.00486 1.35586 3.94297L0 5.31349L16.8054 22.1189L18.1612 20.7557Z" />
+        <path
+          d="M35.8754 46.4291C35.443 44.7948 33.9625 43.6515 32.2622 43.6515H31.3241V22.456C31.3241 19.605 30.2174 16.93 28.2019 14.9145L21.2614 8.03257C21.8111 7.19707 22.1115 6.22231 22.1115 5.19625C22.1115 3.8184 21.5765 2.52117 20.6018 1.56107C19.583 0.542345 18.3078 0 16.908 0C15.5374 0 14.2475 0.535016 13.2728 1.50977L10.4804 4.30212L17.8094 11.6311L19.2459 10.1946L26.1132 17.0106C27.5716 18.4617 28.3705 20.3966 28.3705 22.456V43.6515H16.82V42.193H13.6246V43.6515H11.6457C9.96008 43.6515 8.47229 44.7948 8.03255 46.4291L7.90796 46.9055H36L35.8754 46.4291Z" />
+      </svg>
+      <svg class="animate-bounce-ltr" width="26" height="23" viewBox="0 0 26 23" xmlns="http://www.w3.org/2000/svg">
+        <path class="fill-neutral-600 dark:fill-neutral-100"
+          d="M22.849 0H5.40349C3.73613 0 2.37754 1.32983 2.37754 2.96189V9.18791L0 11.4849L2.37754 13.8121V20.0381C2.37754 21.6702 3.73613 23 5.40349 23H22.849C24.5164 23 25.875 21.6702 25.875 20.0381V2.96189C25.875 1.32983 24.5164 0 22.849 0Z" />
+        <path class="fill-neutral-100 dark:fill-neutral-600"
+          d="M15.4387 13.8994H13.3024L12.9998 5.03125H15.7413L15.4387 13.8994ZM14.3705 15.2881C14.8037 15.2881 15.1509 15.4141 15.412 15.666C15.679 15.918 15.8125 16.2402 15.8125 16.6328C15.8125 17.0195 15.679 17.3389 15.412 17.5908C15.1509 17.8428 14.8037 17.9688 14.3705 17.9688C13.9433 17.9688 13.5962 17.8428 13.3291 17.5908C13.068 17.3389 12.9375 17.0195 12.9375 16.6328C12.9375 16.2461 13.068 15.9268 13.3291 15.6748C13.5962 15.417 13.9433 15.2881 14.3705 15.2881Z" />
+      </svg>
+    </button>
+  </header>
+  <main class="flex-grow flex-1 flex flex-col justify-center">
+    <p class="text-2xl leading-relaxed sm:text-5xl sm:leading-tight 2xl:text-6xl 2xl:leading-tight">Not Found</p>
+    <a href="/" class="flex justify-between"><span class="material-symbols-outlined">arrow_back</span> Back to home</a>
+  </main>
+  <footer class="flex-0 text-neutral-400 dark:text-neutral-500">
+    <p class="text-sm sm:text-sm">Design by <a class="text-black dark:text-white"
+        href="https://wsdesign.myportfolio.com/">Vicente
+        Sulzbach</a></p>
+  </footer>
+  <script src="https://unpkg.com/typewriter-effect@2.19.0/dist/core.js"></script>
+  <script>
+    new Typewriter(document.querySelector('main p'), { delay: 30, loop: true })
+      .typeString("Not Found").pauseFor(300).deleteAll()
+      .typeString('Não Encontrado').pauseFor(300).deleteAll()
+      .typeString('Nicht Gefunden').pauseFor(300).deleteAll()
+      .typeString('No Encontrado').pauseFor(300).deleteAll()
+      .typeString('Non Trovato').pauseFor(300).deleteAll()
+      .typeString('Pas Trouvé').pauseFor(300).deleteAll()
+      .typeString('Bulunamadı').pauseFor(300).deleteAll()
+      .start();
+  </script>
+</body>
+
+</html>

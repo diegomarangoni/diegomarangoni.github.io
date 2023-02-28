@@ -1,0 +1,22 @@
+{
+  "name": "diegomarangoni.dev",
+  "version": "1.0.0",
+  "description": "Source code for [diegomarangoni.dev](https://diegomarangoni.dev/) website.",
+  "scripts": {
+    "dev": "npx tailwindcss -o ./style.css --watch",
+    "build": "npx tailwindcss -o ./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegomarangoni/diegomarangoni.github.io.git"
+  },
+  "author": "Diego Marangoni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diegomarangoni/diegomarangoni.github.io/issues"
+  },
+  "homepage": "https://github.com/diegomarangoni/diegomarangoni.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
